@@ -6,85 +6,123 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import numpy as np
 
+from Gui.DirectionalPad import DirectionalPad
 from Gui.Gpsmodule import GPSFrame
 from Gui.helpers.mapview import Mapview
 from db.db import db_get_chart
 
 LARGEFONT = ("Verdana", 35)
 
+
 class Mainpage(tk.Frame):
     data = None
     mapView = None
+
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        # label of frame Layout 2
-        label = ttk.Label(self, text="Mainpage", font=LARGEFONT)
+        # -----------------------
+        # Top label
+        # -----------------------
+        label = ttk.Label(self, text="Mainpage", font=("Arial", 24))
+        label.pack(side="top", fill="x", padx=10, pady=10)
 
-        # putting the grid in its place by using
-        # grid
-        label.grid(row=0, column=1, padx=10, pady=10)
+        # -----------------------
+        # Bottom container frame (left chart, right GPS+pad)
+        # -----------------------
+        bottom_frame = tk.Frame(self)
+        bottom_frame.pack(side="top", fill="both", expand=True, padx=10, pady=10)
 
-        self.reloadChart()
+        # -----------------------
+        # Left chart/image frame
+        # -----------------------
+        self.chart_frame = tk.Frame(bottom_frame, bg="lightgray")
+        self.chart_frame.pack(side="left", fill="both", expand=True)
 
+        # Example: placeholder for your chart/image
+        self.chart_label = ttk.Label(self.chart_frame, text="Chart/Image Here", background="lightgray")
+        self.chart_label.pack(expand=True, fill="both", padx=5, pady=5)
 
-        self.drawMap()
+        # -----------------------
+        # Right frame: GPS + directional pad
+        # -----------------------
+        right_frame = tk.Frame(bottom_frame)
+        right_frame.pack(side="left", fill="y", padx=10)
 
-        frame2 = GPSFrame(self)
+        # GPSFrame on top
+        gps_frame = GPSFrame(right_frame)
+        gps_frame.pack(side="top", fill="x", expand=False, pady=(0,10))  # small gap below GPS
 
-        # fire event when frame2 is raised
-        frame2.bind("<Map>", frame2.on_show)
-        frame2.grid(row=1, column=2, padx=10, pady=10)
-
-        buttons = [{"label": "left", "cmd": self.panLeft}, {"label": "right", "cmd": self.panRight}]
-        i = 3
-        for b in buttons:
-            tk.Button(self, text=b["label"], command=b["cmd"]).grid(row=2, column=i, padx=10, pady=10)
-            i = i + 1
+        # DirectionalPad at bottom
+        button_cmds = {
+            "zoom out": self.zoomOut,
+            "zoom in": self.zoomIn,
+            "left": self.panLeft,
+            "right": self.panRight,
+            "up": self.panUp,
+            "down": self.panDown
+        }
+        pad = DirectionalPad(right_frame, button_cmds)
+        pad.pack(side="bottom", fill="x", expand=False)
 
     def drawMap(self):
         if self.data is None:
             return
-        # Extract section
-        section = self.data[self.mapView.y_min:self.mapView.y_max,self.mapView.x_min: self.mapView.x_max]
-        # Normalize to 0–255
-        section = section.astype("uint8")
-        # section = section.astype(float)
-        # section -= section.min()
-        # if section.max() > 0:
-        #     section /= section.max()
-        #
-        # section = (section * 255).astype("uint8")
 
+        # Slice the data according to current tile/view
+        section = self.data[
+                  self.mapView.y_min:self.mapView.y_max,
+                  self.mapView.x_min:self.mapView.x_max
+                  ]
+
+        # Convert to PIL Image
         img = Image.fromarray(section, mode="RGB")
 
-        # Optional: resize to fixed display size
-        img = img.resize((400, int(400 * self.mapView.aspect)), Image.Resampling.NEAREST)
+        # Resize to fixed width while maintaining aspect
+        width = 400
+        height = int(width * self.mapView.aspect)
+        img = img.resize((width, height), Image.Resampling.NEAREST)
 
-        # Convert to Tk image
-        self.photo = ImageTk.PhotoImage(img)
+        # Convert to Tk PhotoImage
+        self.chart_image  = ImageTk.PhotoImage(img)
 
-        # Display image
-        img_label = ttk.Label(self, image=self.photo)
-        img_label.grid(row=1, column=1, padx=10, pady=10)
+        # If chart_label already exists, just update image
+        if hasattr(self, "chart_label"):
+            self.chart_label.configure(image=self.chart_image , text="")
+        else:
+            # Create a label inside the chart frame
+            self.chart_label = ttk.Label(self.chart_frame, image=self.chart_image , text="")
+            self.chart_label.pack(expand=True, fill="both", padx=5, pady=5)
 
     def tkraise(self, *args, **kwargs):
         self.reloadChart()
         super().tkraise(*args, **kwargs)
 
     def reloadChart(self):
-            self.data = db_get_chart(1)
-            (h,w,_) = self.data.shape
-            self.mapView = Mapview(w,h)
-
-
+        self.data = db_get_chart(1)
+        (h, w, _) = self.data.shape
+        self.mapView = Mapview(w, h)
+        self.drawMap()
 
     def panRight(self):
         self.mapView.tile_x_inc()
-
         self.drawMap()
 
     def panLeft(self):
-
         self.mapView.tile_x_dec()
+        self.drawMap()
+
+    def panUp(self):
+        self.mapView.tile_y_inc()
+        self.drawMap()
+
+    def panDown(self):
+        self.mapView.tile_y_dec()
+        self.drawMap()
+
+    def zoomIn(self):
+        self.mapView.tiles_inc()
+        self.drawMap()
+    def zoomOut(self):
+        self.mapView.tiles_dec()
         self.drawMap()
