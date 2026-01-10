@@ -149,3 +149,15 @@ def db_get_chart(id=1) -> np.ndarray:
         return np.frombuffer(data_blob, dtype=np.uint8).reshape((d1, d2, d3))
     finally:
         conn.close()
+
+def db_get_refpoints(id=1):
+    conn = sqlite3.connect("Data\\database.db")
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT ref_index, pixel_x, pixel_y, latitude, longitude from  ref_points WHERE chart_id=?", (id,))
+        rows = cur.fetchall()
+
+
+        return rows
+    finally:
+        conn.close()

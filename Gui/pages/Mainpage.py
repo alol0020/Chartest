@@ -9,7 +9,8 @@ import numpy as np
 from Gui.DirectionalPad import DirectionalPad
 from Gui.Gpsmodule import GPSFrame
 from Gui.helpers.mapview import Mapview
-from db.db import db_get_chart
+from db.coordinateMapping import pixel_to_latlon
+from db.db import db_get_chart, db_get_refpoints
 
 LARGEFONT = ("Verdana", 35)
 
@@ -24,6 +25,7 @@ class Mainpage(tk.Frame):
         # -----------------------
         # Top label
         # -----------------------
+        self.refs = []
         label = ttk.Label(self, text="Mainpage", font=("Arial", 24))
         label.pack(side="top", fill="x", padx=10, pady=10)
 
@@ -42,7 +44,7 @@ class Mainpage(tk.Frame):
         # Example: placeholder for your chart/image
         self.chart_label = ttk.Label(self.chart_frame, text="Chart/Image Here", background="lightgray")
         self.chart_label.pack(expand=True, fill="both", padx=5, pady=5)
-
+        self.chart_label.bind('<Motion>', self.movementInChart)
         # -----------------------
         # Right frame: GPS + directional pad
         # -----------------------
@@ -65,6 +67,29 @@ class Mainpage(tk.Frame):
         pad = DirectionalPad(right_frame, button_cmds)
         pad.pack(side="bottom", fill="x", expand=False)
 
+    def movementInChart(self, event):
+        # Frame size
+        frame_w = self.chart_frame.winfo_width()
+        frame_h = self.chart_frame.winfo_height()
+
+        # Current map bounds
+        x_min, x_max, y_min, y_max = self.mapView.get_current_bounds()
+
+        # Scaling
+        scale_x = (x_max - x_min) / frame_w
+        scale_y = (y_max - y_min) / frame_h
+
+        # Map pixel to data index
+        data_x = int(x_min + event.x * scale_x)
+        data_y = int(y_min + event.y * scale_y)
+
+        # Clamp to bounds
+        data_x = min(max(data_x, x_min), x_max - 1)
+        data_y = min(max(data_y, y_min), y_max - 1)
+        lat,lon = pixel_to_latlon(data_x,data_y,self.refs)
+        print("coordinates at mouse:", lat, lon)
+
+
     def drawMap(self):
         if self.data is None:
             return
@@ -79,9 +104,9 @@ class Mainpage(tk.Frame):
         img = Image.fromarray(section, mode="RGB")
 
         # Resize to fixed width while maintaining aspect
-        width = 400
-        height = int(width * self.mapView.aspect)
-        img = img.resize((width, height), Image.Resampling.NEAREST)
+        self.chart_frame_width = 400
+        self.chart_frame_height = int(self.chart_frame_width * self.mapView.aspect)
+        img = img.resize((self.chart_frame_width, self.chart_frame_height), Image.Resampling.NEAREST)
 
         # Convert to Tk PhotoImage
         self.chart_image  = ImageTk.PhotoImage(img)
@@ -100,6 +125,7 @@ class Mainpage(tk.Frame):
 
     def reloadChart(self):
         self.data = db_get_chart(1)
+        self.refs = db_get_refpoints(1)
         (h, w, _) = self.data.shape
         self.mapView = Mapview(w, h)
         self.drawMap()

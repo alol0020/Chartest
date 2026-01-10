@@ -42,8 +42,7 @@ class Mapview:
         self.tiles = np.array(self.tiles)  # shape: (num_tiles, num_tiles, 4)
     def update_bounds_from_tile(self):
         """Update x_min/x_max/y_min/y_max from current tile coordinates."""
-        self.x_min, self.x_max, self.y_min, self.y_max = \
-            self.tiles[self.current_tile_x, self.current_tile_y]
+        self.x_min, self.x_max, self.y_min, self.y_max = self.tiles[self.current_tile_x, self.current_tile_y]
 
     # -------------------
     # Traversal functions

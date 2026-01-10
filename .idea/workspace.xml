@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/Gui/DirectionalPad.py" afterDir="false" />
+    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment="pan and zoom">
+      <change afterPath="$PROJECT_DIR$/db/coordinateMapping.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gui/helpers/mapview.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui/helpers/mapview.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gui/pages/Mainpage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui/pages/Mainpage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/db.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,11 +113,19 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1768021816724</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="pan and zoom">
+      <option name="closed" value="true" />
+      <created>1768025396293</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1768025396293</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="pan and zoom" />
+    <option name="LAST_COMMIT_MESSAGE" value="pan and zoom" />
   </component>
 </project>
