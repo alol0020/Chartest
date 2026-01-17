@@ -9,6 +9,7 @@ import numpy as np
 from Gui.DirectionalPad import DirectionalPad
 from Gui.Gpsmodule import GPSFrame
 from Gui.helpers.mapview import Mapview
+from Gui.pointList import PointList
 from db.coordinateMapping import pixel_to_latlon
 from db.db import db_get_chart, db_get_refpoints
 
@@ -54,7 +55,8 @@ class Mainpage(tk.Frame):
         # GPSFrame on top
         gps_frame = GPSFrame(right_frame)
         gps_frame.pack(side="top", fill="x", expand=False, pady=(0,10))  # small gap below GPS
-
+        point_list = PointList(right_frame)
+        point_list.pack(side="top", fill="x", expand=False, pady=(0,10))
         # DirectionalPad at bottom
         button_cmds = {
             "zoom out": self.zoomOut,
