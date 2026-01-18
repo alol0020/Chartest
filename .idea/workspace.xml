@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment="map pixl to coords.">
-      <change afterPath="$PROJECT_DIR$/Gui/pointList.py" afterDir="false" />
+    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment="add pointlist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gui/pages/Mainpage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui/pages/Mainpage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gui/Application.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui/MainView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "alol0020"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/alol0020/Chartest.git",
+    "accountId": "b5572995-da75-4e99-a71d-7ac2e604eaa4"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -35,23 +47,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.bat2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.batt.executor&quot;: &quot;Run&quot;,
-    &quot;Python.kaptest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.loadTiles.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.old.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.tile.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Repositories/ChartTest/pages&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.bat2.executor": "Run",
+    "Python.batt.executor": "Run",
+    "Python.kaptest.executor": "Run",
+    "Python.loadTiles.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.old.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.tile.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Repositories/ChartTest/pages",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Repositories\ChartTest\pages" />
@@ -125,13 +137,32 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1768026984428</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="add pointlist">
+      <option name="closed" value="true" />
+      <created>1768669314640</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1768669314640</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="." />
     <MESSAGE value="pan and zoom" />
     <MESSAGE value="map pixl to coords." />
-    <option name="LAST_COMMIT_MESSAGE" value="map pixl to coords." />
+    <MESSAGE value="add pointlist" />
+    <option name="LAST_COMMIT_MESSAGE" value="add pointlist" />
   </component>
 </project>

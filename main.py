@@ -1,5 +1,12 @@
-from  Gui.Application import Application
+import tkinter as tk
+from controller.app_controller import AppController
 
-# Driver Code
-app = Application()
-app.mainloop()
+def main():
+    root = tk.Tk()
+    root.title("Tkinter MVC Skeleton")
+
+    app = AppController(root)
+    app.run()
+
+if __name__ == "__main__":
+    main()

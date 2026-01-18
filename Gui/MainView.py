@@ -7,15 +7,12 @@ from db.db import db_init
 
 LARGEFONT = ("Verdana", 35)
 
+class MainView(tk.Frame):
+    def __init__(self, parent, controller):
+        super().__init__(parent)
+        self.controller = controller
+        self.pack(fill="both", expand=True)
 
-class Application(tk.Tk):
-
-    # __init__ function for class tkinterApp 
-    def __init__(self, *args, **kwargs):
-        # __init__ function for class Tk
-        db_init()
-        tk.Tk.__init__(self, *args, **kwargs)
-        self.minsize(600,600)
         # Creating Menubar
         menubar = tk.Menu(self)
 
