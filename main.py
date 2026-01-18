@@ -4,7 +4,7 @@ from controller.app_controller import AppController
 def main():
     root = tk.Tk()
     root.title("Tkinter MVC Skeleton")
-
+    root.minsize(600,600)
     app = AppController(root)
     app.run()
 

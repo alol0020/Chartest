@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment="add pointlist">
+    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment="mvc skeleton">
+      <change afterPath="$PROJECT_DIR$/controller/map_controller.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/chart_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/view/Components/Chart.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gui/Application.py" beforeDir="false" afterPath="$PROJECT_DIR$/Gui/MainView.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/app_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/app_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/app_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/app_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/main_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main_view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +65,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Repositories/ChartTest/pages",
+    "last_opened_file_path": "D:/Repositories/ChartTest/controller",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Repositories\ChartTest\controller" />
       <recent name="D:\Repositories\ChartTest\pages" />
       <recent name="D:\Repositories\ChartTest" />
       <recent name="D:\Repositories\ChartTest\tiledCharts" />
@@ -144,7 +150,14 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1768669314640</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="mvc skeleton">
+      <option name="closed" value="true" />
+      <created>1768721791660</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1768721791660</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,6 +176,7 @@
     <MESSAGE value="pan and zoom" />
     <MESSAGE value="map pixl to coords." />
     <MESSAGE value="add pointlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pointlist" />
+    <MESSAGE value="mvc skeleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvc skeleton" />
   </component>
 </project>
