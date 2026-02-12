@@ -1,4 +1,4 @@
-from controller.map_controller import MapController
+from controller.chart_controller  import ChartController
 from model.app_model import AppModel
 from controller.point_controller import PointController
 from view.main_view import MainView
@@ -12,7 +12,7 @@ class AppController:
 
         # subcontrollers
         self.point_controller = PointController(self)
-        self.chart_controller = MapController(self)
+        self.chart_controller = ChartController(self)
 
         # main view
         self.view = MainView(root, controller=self)

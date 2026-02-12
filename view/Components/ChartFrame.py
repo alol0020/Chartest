@@ -23,8 +23,10 @@ class CharFrame(tk.Frame):
         self.chart_label = ttk.Label(self, text="Chart/Image Here", background="lightgray")
         self.chart_label.pack(expand=True, fill="both", padx=5, pady=5)
         # self.chart_label.bind('<Motion>', self.movementInChart)
+        self.chart_label.bind('<B1-Motion>', self.on_drag)
 
-
+    def on_drag(self,event):
+        self.controller.on_pan(event.x/self.chart_frame_width,event.y/self.chart_frame_height)
     def refresh(self, data):
         if data is None:
             return

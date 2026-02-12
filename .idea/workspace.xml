@@ -4,14 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment="mvc skeleton">
-      <change afterPath="$PROJECT_DIR$/controller/map_controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/chart_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/view/Components/Chart.py" afterDir="false" />
+    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment="en bit på vägen med mvc faktorisering.">
+      <change afterPath="$PROJECT_DIR$/view/Components/DirectionalPad.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/app_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/app_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/app_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/app_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/map_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/chart_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/chart_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/chart_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/Components/Chart.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/Components/ChartFrame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/view/main_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main_view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,18 +28,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "alol0020"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;alol0020&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/alol0020/Chartest.git",
-    "accountId": "b5572995-da75-4e99-a71d-7ac2e604eaa4"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/alol0020/Chartest.git&quot;,
+    &quot;accountId&quot;: &quot;b5572995-da75-4e99-a71d-7ac2e604eaa4&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -65,17 +64,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Repositories/ChartTest/controller",
+    "last_opened_file_path": "D:/Repositories/ChartTest/view/Components",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Repositories\ChartTest\view\Components" />
       <recent name="D:\Repositories\ChartTest\controller" />
       <recent name="D:\Repositories\ChartTest\pages" />
       <recent name="D:\Repositories\ChartTest" />
       <recent name="D:\Repositories\ChartTest\tiledCharts" />
-      <recent name="D:\Repositories\ChartTest\Charts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Repositories\ChartTest\Gui" />
@@ -157,7 +156,14 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1768721791660</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="en bit på vägen med mvc faktorisering.">
+      <option name="closed" value="true" />
+      <created>1768727609419</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1768727609419</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -177,6 +183,7 @@
     <MESSAGE value="map pixl to coords." />
     <MESSAGE value="add pointlist" />
     <MESSAGE value="mvc skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="mvc skeleton" />
+    <MESSAGE value="en bit på vägen med mvc faktorisering." />
+    <option name="LAST_COMMIT_MESSAGE" value="en bit på vägen med mvc faktorisering." />
   </component>
 </project>
