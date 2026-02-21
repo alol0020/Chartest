@@ -6,8 +6,6 @@ class DirectionalPad(tk.Frame):
         super().__init__(parent)
         self.chart_image = None
         self.controller = controller
-        self.chart_frame_height = None
-        self.chart_frame_width = None
 
         # 3x3 grid layout
         for row in range(4):

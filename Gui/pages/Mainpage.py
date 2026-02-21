@@ -45,7 +45,6 @@ class Mainpage(tk.Frame):
         # Example: placeholder for your chart/image
         self.chart_label = ttk.Label(self.chart_frame, text="Chart/Image Here", background="lightgray")
         self.chart_label.pack(expand=True, fill="both", padx=5, pady=5)
-        self.chart_label.bind('<Motion>', self.movementInChart)
         # -----------------------
         # Right frame: GPS + directional pad
         # -----------------------
@@ -69,27 +68,7 @@ class Mainpage(tk.Frame):
         pad = DirectionalPad(right_frame, button_cmds)
         pad.pack(side="bottom", fill="x", expand=False)
 
-    def movementInChart(self, event):
-        # Frame size
-        frame_w = self.chart_frame.winfo_width()
-        frame_h = self.chart_frame.winfo_height()
 
-        # Current map bounds
-        x_min, x_max, y_min, y_max = self.mapView.get_current_bounds()
-
-        # Scaling
-        scale_x = (x_max - x_min) / frame_w
-        scale_y = (y_max - y_min) / frame_h
-
-        # Map pixel to data index
-        data_x = int(x_min + event.x * scale_x)
-        data_y = int(y_min + event.y * scale_y)
-
-        # Clamp to bounds
-        data_x = min(max(data_x, x_min), x_max - 1)
-        data_y = min(max(data_y, y_min), y_max - 1)
-        lat,lon = pixel_to_latlon(data_x,data_y,self.refs)
-        print("coordinates at mouse:", lat, lon)
 
 
     def drawMap(self):

@@ -18,11 +18,8 @@ class CharFrame(tk.Frame):
         super().__init__(parent)
         self.chart_image = None
         self.controller = controller
-        self.chart_frame_height = None
-        self.chart_frame_width = None
         self.chart_label = ttk.Label(self, text="Chart/Image Here", background="lightgray")
         self.chart_label.pack(expand=True, fill="both", padx=5, pady=5)
-        # self.chart_label.bind('<Motion>', self.movementInChart)
         self.chart_label.bind('<ButtonPress-1>', self.on_drag_start)
         self.chart_label.bind('<ButtonRelease-1>', self.on_drag_stop)
         self.chart_label.bind('<B1-Motion>', self.on_drag)
@@ -35,7 +32,6 @@ class CharFrame(tk.Frame):
 
     def on_drag(self,event):
         self.controller.on_pan(event.x,event.y)
-        # self.controller.on_pan(event.x/self.chart_frame_width,event.y/self.chart_frame_height)
 
     def refresh(self, data):
         if data is None:
