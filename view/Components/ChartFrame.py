@@ -23,10 +23,20 @@ class CharFrame(tk.Frame):
         self.chart_label = ttk.Label(self, text="Chart/Image Here", background="lightgray")
         self.chart_label.pack(expand=True, fill="both", padx=5, pady=5)
         # self.chart_label.bind('<Motion>', self.movementInChart)
+        self.chart_label.bind('<ButtonPress-1>', self.on_drag_start)
+        self.chart_label.bind('<ButtonRelease-1>', self.on_drag_stop)
         self.chart_label.bind('<B1-Motion>', self.on_drag)
 
+    def on_drag_start(self,event):
+        self.controller.on_pan_start(event.x,event.y)
+
+    def on_drag_stop(self,event):
+        self.controller.on_pan_stop()
+
     def on_drag(self,event):
-        self.controller.on_pan(event.x/self.chart_frame_width,event.y/self.chart_frame_height)
+        self.controller.on_pan(event.x,event.y)
+        # self.controller.on_pan(event.x/self.chart_frame_width,event.y/self.chart_frame_height)
+
     def refresh(self, data):
         if data is None:
             return
@@ -35,9 +45,10 @@ class CharFrame(tk.Frame):
         img = Image.fromarray(data, mode="RGB")
 
         # Resize to fixed width while maintaining aspect
-        self.chart_frame_width = 400
-        self.chart_frame_height = int(self.chart_frame_width * self.controller.get_aspect())
-        img = img.resize((self.chart_frame_width, self.chart_frame_height), Image.Resampling.NEAREST)
+        width = 400
+        height = int(width * self.controller.get_aspect())
+        img = img.resize((width, height), Image.Resampling.NEAREST)
+        self.controller.set_frame_size([width,height])
 
         # Convert to Tk PhotoImage
         self.chart_image  = ImageTk.PhotoImage(img)

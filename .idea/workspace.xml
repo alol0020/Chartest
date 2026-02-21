@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment="en bit på vägen med mvc faktorisering.">
-      <change afterPath="$PROJECT_DIR$/view/Components/DirectionalPad.py" afterDir="false" />
+    <list default="true" id="1f809399-0c67-4dd5-8217-24285b49b419" name="Changes" comment="Hard work. But nicely. &#10;Frames. karta med egna komponenter och en diretion pad som funkar fint. Utgår från centrum istället för top left corner.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/app_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/app_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/map_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/chart_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/chart_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/chart_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/chart_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/chart_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/Components/Chart.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/Components/ChartFrame.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/view/main_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/main_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/Components/ChartFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/view/Components/ChartFrame.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "D:/Repositories/ChartTest/view/Components",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -163,7 +161,14 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1768727609419</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="Hard work. But nicely. &#10;Frames. karta med egna komponenter och en diretion pad som funkar fint. Utgår från centrum istället för top left corner.">
+      <option name="closed" value="true" />
+      <created>1770932409903</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1770932409903</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,6 +189,7 @@
     <MESSAGE value="add pointlist" />
     <MESSAGE value="mvc skeleton" />
     <MESSAGE value="en bit på vägen med mvc faktorisering." />
-    <option name="LAST_COMMIT_MESSAGE" value="en bit på vägen med mvc faktorisering." />
+    <MESSAGE value="Hard work. But nicely. &#10;Frames. karta med egna komponenter och en diretion pad som funkar fint. Utgår från centrum istället för top left corner." />
+    <option name="LAST_COMMIT_MESSAGE" value="Hard work. But nicely. &#10;Frames. karta med egna komponenter och en diretion pad som funkar fint. Utgår från centrum istället för top left corner." />
   </component>
 </project>

@@ -19,6 +19,9 @@ class ChartModel:
         self.max_height = None
         self.aspect = None
 
+        self.frame_size = [None,None]
+
+
     def getX0(self):
         return max(self.center[0] - self.width // 2, 0)
 
@@ -32,7 +35,7 @@ class ChartModel:
         return min(self.center[1] + self.height // 2, self.max_height)
 
     def reset(self,w,h):
-        self.center = (w//2,h//2)
+        self.center = [w//2,h//2]
         self.width = w
         self.height = h
 
@@ -58,7 +61,7 @@ class ChartModel:
 
         x = min(max(x,self.width//2),self.max_width-self.width//2)
         y = min(max(y,self.height//2),self.max_height-self.height//2)
-        self.center=(x,y)
+        self.center=[x,y]
 
 
 
